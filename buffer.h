@@ -14,4 +14,6 @@ void buffer_free(Buffer* buf);
 
 bool buffer_read_all(Buffer* buffer, FILE* stream);
 
+const char* buffer_data(const Buffer* buffer);
+
 #endif
