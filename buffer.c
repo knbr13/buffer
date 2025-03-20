@@ -91,6 +91,10 @@ size_t buffer_length(const Buffer* buffer) {
     return buffer->len;
 }
 
+size_t buffer_capacity(const Buffer* buffer) {
+    return buffer->cap;
+}
+
 void buffer_clear(Buffer* buffer) {
     buffer->len = 0;
 }
