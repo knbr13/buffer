@@ -90,3 +90,7 @@ const char* buffer_data(const Buffer* buffer) {
 size_t buffer_length(const Buffer* buffer) {
     return buffer->len;
 }
+
+void buffer_clear(Buffer* buffer) {
+    buffer->len = 0;
+}

@@ -18,4 +18,6 @@ const char* buffer_data(const Buffer* buffer);
 
 size_t buffer_length(const Buffer* buffer);
 
+void buffer_clear(Buffer* buffer);
+
 #endif
