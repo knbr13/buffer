@@ -62,3 +62,23 @@ static bool resize_buffer(Buffer* buffer, size_t new_capacity) {
     buffer->cap = new_capacity;
     return true;
 }
+
+bool buffer_read_all(Buffer* buffer, FILE* stream) {
+    while (true) {
+        size_t available = buffer->cap - buffer->len;
+        
+        if (available == 0) {
+            size_t new_cap = buffer->cap ? buffer->cap * 2 : smallBufferSize;
+            if (!resize_buffer(buffer, new_cap)) return false;
+            available = new_cap - buffer->len;
+        }
+
+        size_t bytes_read = fread(buffer->data + buffer->len, 1, available, stream);
+        buffer->len += bytes_read;
+
+        if (bytes_read < available) {
+            if (feof(stream)) return true;
+            if (ferror(stream)) return false;
+        }
+    }
+}
