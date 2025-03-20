@@ -3,4 +3,6 @@
 
 typedef struct Buffer Buffer;
 
+Buffer* buffer_create();
+
 #endif
