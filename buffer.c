@@ -45,3 +45,10 @@ Buffer* buffer_create_with_size(size_t initial_size) {
 
     return buf;
 }
+
+void buffer_free(Buffer* buf) {
+    if(buf) {
+        free(buf->data);
+        free(buf);
+    }
+}

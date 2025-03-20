@@ -6,6 +6,9 @@
 typedef struct Buffer Buffer;
 
 Buffer* buffer_create();
+
 Buffer* buffer_create_with_size(size_t initial_size);
+
+void buffer_free(Buffer* buf);
 
 #endif
