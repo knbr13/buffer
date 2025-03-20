@@ -94,3 +94,8 @@ size_t buffer_length(const Buffer* buffer) {
 void buffer_clear(Buffer* buffer) {
     buffer->len = 0;
 }
+
+bool buffer_trim(Buffer* buffer) {
+    if(buffer->cap==buffer->len) return true;
+    return resize_buffer(buffer, buffer->len);
+}
