@@ -86,3 +86,7 @@ bool buffer_read_all(Buffer* buffer, FILE* stream) {
 const char* buffer_data(const Buffer* buffer) {
     return buffer->data;
 }
+
+size_t buffer_length(const Buffer* buffer) {
+    return buffer->len;
+}

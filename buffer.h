@@ -16,4 +16,6 @@ bool buffer_read_all(Buffer* buffer, FILE* stream);
 
 const char* buffer_data(const Buffer* buffer);
 
+size_t buffer_length(const Buffer* buffer);
+
 #endif
